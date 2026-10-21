@@ -1,5 +1,3 @@
-console.log("Hello, World, welcome to a new day!");
-
 const zodiac_signs = [
     {
         start_month: 12,
@@ -9,7 +7,7 @@ const zodiac_signs = [
         end_day: 19,
         sound: "audio/capricorn.mp3",
         image: "images/capricorn.png",
-        Description: "Strong, determined and resilient."
+        description: "Strong, determined and resilient."
     },
     {
         start_month: 1,
@@ -19,7 +17,7 @@ const zodiac_signs = [
         end_day: 18,
         sound: "audio/aquarius.mp3",
         image: "images/aquarius.png",
-        Description: "Independent, distinctive, and unconventional."
+        description: "Independent, distinctive, and unconventional."
     },
     {
         start_month: 2,
@@ -29,7 +27,7 @@ const zodiac_signs = [
         end_day: 20,
         sound: "audio/pisces.mp3",
         image: "images/pisces.png",
-        Description: "Compassionate, artistic, and intuitive."
+        description: "Compassionate, artistic, and intuitive."
     },
     {
         start_month: 3,
@@ -39,7 +37,7 @@ const zodiac_signs = [
         end_day: 19,
         sound: "audio/aries.mp3",
         image: "images/aries.png",
-        Description: "Energetic, confident, and bold."
+        description: "Energetic, confident, and bold."
     },
     {
         start_month: 4,
@@ -49,7 +47,7 @@ const zodiac_signs = [
         end_day: 20,
         sound: "audio/taurus.mp3",
         image: "images/taurus.png",
-        Description: "Beautiful, luxurious, and sensual."
+        description: "Beautiful, luxurious, and sensual."
 
     },
     {
@@ -60,7 +58,7 @@ const zodiac_signs = [
         end_day: 20,
         sound: "audio/gemini.mp3",
         image: "images/gemini.png",
-        Description: "Adaptable, versatile, and expressive."
+        description: "Adaptable, versatile, and expressive."
     },
     {
         start_month: 6,
@@ -70,7 +68,7 @@ const zodiac_signs = [
         end_day: 22,
         sound: "audio/cancer.mp3",
         image: "images/cancer.png",
-        Description: "Protective, soft, and protective."
+        description: "Caring, soft, and protective."
     },
     {
         start_month: 7,
@@ -80,7 +78,7 @@ const zodiac_signs = [
         end_day: 22,
         sound: "audio/leo.mp3",
         image: "images/leo.png",
-        Description: "Confident, generous, and enthusiastic."
+        description: "Confident, generous, and enthusiastic."
     },
     {
         start_month: 8,
@@ -90,7 +88,7 @@ const zodiac_signs = [
         end_day: 22,
         sound: "audio/virgo.mp3",
         image: "images/virgo.png",
-        Description: "Practical, detailed, and analytical."
+        description: "Practical, detailed, and analytical."
     },
     {
         start_month: 9,
@@ -100,7 +98,7 @@ const zodiac_signs = [
         end_day: 22,
         sound: "audio/libra.mp3",
         image: "images/libra.png",
-        Description: "Elegant, beautiful, and balanced."
+        description: "Elegant, beautiful, and balanced."
     },
     {
         start_month: 10,
@@ -110,7 +108,7 @@ const zodiac_signs = [
         end_day: 21,
         sound: "audio/scorpio.mp3",
         image: "images/scorpio.png",
-        Description: "Passionate, intense, and mysterious."
+        description: "Passionate, intense, and mysterious."
     },
     {
         start_month: 11,
@@ -120,12 +118,9 @@ const zodiac_signs = [
         end_day: 21,
         sound: "audio/sagittarius.mp3",
         image: "images/sagittarius.png",
-        Description: "Adventurous, optimistic, and energetic."
+        description: "Adventurous, optimistic, and energetic."
     }
 ];
-function find_zodiac_sign() {
-    console.log(`Finding zodiac flower based on birthday`);
-}
 function show_zodiac_flower() {
     console.log(`Showing zodiac flower for clicked zodiac sign`);
 }
@@ -142,9 +137,31 @@ function save_last_sign() {
     console.log(`Saving last clicked zodiac sign`);
 }
 
-find_zodiac_sign();
+
 show_zodiac_flower();
 play_zodiac_sound();
 show_zodiac_description();
 open_help_screen();
 save_last_sign();
+
+for (let i = 0; i < zodiac_signs.length; i++) {
+    console.log(`${i+1}. ${zodiac_signs[i].name}`)
+};
+
+function find_zodiac_sign(month, day) {
+    for (const zodiac_sign of zodiac_signs) {
+        if (month === zodiac_sign.start_month && day >= zodiac_sign.start_day || month === zodiac_sign.end_month && day <= zodiac_sign.end_day) {
+            return zodiac_sign.name;
+        }
+    }
+    return null;
+};
+
+console.log(find_zodiac_sign(12, 25)); // Output: Pansy
+console.log(find_zodiac_sign(1, 15)); // Output: Pansy
+console.log(find_zodiac_sign(2, 10)); // Output: Orchid
+console.log(find_zodiac_sign(3, 5)); // Output: Water Lily
+console.log(find_zodiac_sign(8, 15)); // Output: Sunflower
+console.log(find_zodiac_sign(5, 10)); // Output: Rose
+console.log(find_zodiac_sign(6, 25)); // Output: White Rose
+console.log(find_zodiac_sign(7, 30)); // Output: Sunflower
