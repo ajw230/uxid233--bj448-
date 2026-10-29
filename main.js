@@ -170,10 +170,26 @@ console.log(find_zodiac_sign(6, 25)); // Output: White Rose
 console.log(find_zodiac_sign(7, 30)); // Output: Sunflower
 
 
-const flowerlist = document.querySelector("#output")
-const date = document.querySelector('#search')
-const input = document.querySelector('imput');
 
-zodiac_signs.forEach(zodiac => {
-   
-});
+// zodiac_signs.forEach(zodiac => {
+//    const p = document.createElement('p')
+//    p.textContent = zodiac.name;
+//    const text = document.querySelector('#text')
+//    text.appendChild(p);
+// });
+
+const output = document.querySelector('#output')
+const zodiac_sign = zodiac_signs;
+
+for (const name of zodiac_sign) {
+    console.log(zodiac_sign.name);
+}
+if (output) {
+    for (const name of zodiac_signs) {
+        const p = document.createElement('li');
+        p.textContent = name;
+        output.append(p);
+    }
+} else {
+    console.log('does not work');
+}
