@@ -150,7 +150,10 @@ for (let i = 0; i < zodiac_signs.length; i++) {
 
 function find_zodiac_sign(month, day) {
     for (const zodiac_sign of zodiac_signs) {
-        if (month === zodiac_sign.start_month && day >= zodiac_sign.start_day || month === zodiac_sign.end_month && day <= zodiac_sign.end_day) {
+        if (month === zodiac_sign.start_month && 
+            day >= zodiac_sign.start_day || 
+            month === zodiac_sign.end_month && 
+            day <= zodiac_sign.end_day) {
             return zodiac_sign.name;
         }
     }
@@ -165,3 +168,12 @@ console.log(find_zodiac_sign(8, 15)); // Output: Sunflower
 console.log(find_zodiac_sign(5, 10)); // Output: Rose
 console.log(find_zodiac_sign(6, 25)); // Output: White Rose
 console.log(find_zodiac_sign(7, 30)); // Output: Sunflower
+
+
+const flowerlist = document.querySelector("#output")
+const date = document.querySelector('#search')
+const input = document.querySelector('imput');
+
+zodiac_signs.forEach(zodiac => {
+   
+});
