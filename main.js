@@ -171,19 +171,10 @@ console.log(find_zodiac_sign(7, 30)); // Output: Sunflower
 
 
 
-// zodiac_signs.forEach(zodiac => {
-//    const p = document.createElement('p')
-//    p.textContent = zodiac.name;
-//    const text = document.querySelector('#text')
-//    text.appendChild(p);
-// });
-
 const output = document.querySelector('#output')
-const zodiac_sign = zodiac_signs;
+// const zodiac_sign = zodiac_signs;
 
-// for (const name of zodiac_sign) {
-//     console.log(zodiac_sign.name);
-// }
+
 if (output) {
     for (const sign of zodiac_signs) {
         const p = document.createElement('li');
@@ -193,3 +184,6 @@ if (output) {
 } else {
     console.log('does not work');
 }
+const button = document.querySelector('#button')
+
+// button.addEventListener('click', 
