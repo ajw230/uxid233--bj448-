@@ -130,6 +130,7 @@ function play_zodiac_sound() {
 function show_zodiac_description() {
     console.log(`Showing zodiac description for clicked zodiac sign`);
 }
+
 function open_help_screen() {
     console.log(`Opening help screen`);
 }
@@ -169,11 +170,9 @@ console.log(find_zodiac_sign(5, 10)); // Output: Rose
 console.log(find_zodiac_sign(6, 25)); // Output: White Rose
 console.log(find_zodiac_sign(7, 30)); // Output: Sunflower
 
-
-
 const output = document.querySelector('#output')
-// const zodiac_sign = zodiac_signs;
-
+const button = document.querySelector('#search')
+const date_input = document.querySelector('#birth-date')
 
 if (output) {
     for (const sign of zodiac_signs) {
@@ -184,6 +183,26 @@ if (output) {
 } else {
     console.log('does not work');
 }
-const button = document.querySelector('#button')
 
-// button.addEventListener('click', 
+
+function get_zodiac_flower(month_get, date_get) {
+    for (const zodiac_sign of zodiac_signs) {
+    const start_m_d = month_get === zodiac_sign.start_month && date_get >= zodiac_sign.start_day;
+    const end_m_d = month_get === zodiac_sign.end_month && date_get <= zodiac_sign.end_day;
+    if (start_m_d || end_m_d) {
+        return zodiac_sign.name;
+    }
+    }
+    return null;
+}
+
+button.addEventListener('click', function() {
+    const selected_date = new Date(date_input.value);
+    const date_get = selected_date.getDate();
+    const month_get = selected_date.getMonth() + 1; 
+    const zodiac_flower = get_zodiac_flower(month_get, date_get);
+    output.textContent = zodiac_flower ? `Your zodiac flower is: ${zodiac_flower}` : 'No zodiac flower found for this date.';
+});
+
+console.log(get_zodiac_flower(12, 25)); // Output: Pansy
+console.log(get_zodiac_flower(1, 15)); // Output: Pansy
