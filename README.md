@@ -6,3 +6,5 @@ My topic will be Flowers that correlate to each zodiac sign. So when it's clicke
 ## AI Use
 - I use AI to explain concepts that are hard to understand or just for explanations. 
 
+-I use the vs code AI to show me how to show my functions images and descriptions on my HTML and then I also use it to fill in the info to show my outputs
+-I used vs code Ai to show me how to stop all sounds.
